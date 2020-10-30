@@ -7,5 +7,6 @@
 </head>
 <body>
   <h1>尊爵貴賓室</h1>
+  尊爵的 <?=$_GET['name'];?> 您好
 </body>
 </html>
