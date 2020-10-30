@@ -16,7 +16,7 @@
         echo "身高是:".$_GET['height'];   //name值
         echo "<br>";
         echo "體重是:".$_GET['weight'];
-        $result=($_GET['weight'] /pow($_GET['height']/100,2));   //
+        $result=($_GET['weight'] /pow($_GET['height']/100,2));
 
       }   //isset變數 empty值
           //表單未送至client端 不會顯示
@@ -35,11 +35,13 @@
   ?>
 
   <?php
-    if(isset($result)){   //取兩位數,sprintf("%.2f",$result);
+    if(isset($result)){   //isset檢查變數是否定義 //取兩位數,sprintf("%.2f",$result);
   ?>
 
   <h5>你的BMI為</h5>   
   <div style="background:skyblue;width:200px;height:30px"><?=round($result,2);?></div>
+
+  <a href='student.php?num=<?=$_GET['num']?>'>回學生查詢</a>
   <a href="form.php">重新計算</a>
 
   <?php
