@@ -26,15 +26,22 @@ echo "一共有".count($array)."個閏年";
 $sky=['甲','乙','丙','丁','戊','己','庚','辛','壬','癸'];
 $land=['子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥'];
 $match=[];
-foreach($sky as $i=> $s){   //$i key $s value
+// foreach($sky as $i=> $s){   //$i key $s value
 
-  foreach($land as $j=> $l){
-    $match[1024+($i*10+$j)]=$s.$l;   //後重複值覆蓋，錯誤
-  }
+//   foreach($land as $j=> $l){
+//     $match[1024+($i*10+$j)]=$s.$l;   //後重複值覆蓋，錯誤
+//   }
+// }
+
+for($i=0;$i<60;$i++){
+  $match[1024+$i]=$sky[$i%10].$land[$i%12];
 }
 
 print_r($match);
-echo $match[1096];
+echo "<br>";
+echo count($match);
+echo "<br>";
+echo $match[1077];
 
 ?>
 
